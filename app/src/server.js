@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require('path');
 
 //your routes here
 app.get('/', function (req, res) {
