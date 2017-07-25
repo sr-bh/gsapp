@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Green Strips</title>
+	<link rel="stylesheet" href="style.css">
+	</head>
+<body>
+	<header>
+		<h1>Welcome To Green Strips</h1>
+		<nav>
+			<a href="login.html">LOGIN</a>
+			<a href="buy.html">BUY</a>
+			<a href="advertise.html">ADVERTISE</a>
+		</nav>
+	</header>
+	<main>
+	<div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 11</div>
+    <img src="images/img1.jpg" style="width:100%">
+    <div class="text">ONE</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 11</div>
+    <img src="images/img2.jpg" style="width:100%">
+    <div class="text">TWO</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 11</div>
+    <img src="images/img3.jpg" style="width:100%">
+    <div class="text">THREE</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 11</div>
+    <img src="images/img4.jpg" style="width:100%">
+    <div class="text">FOUR</div>
+  </div>
+  
+ <div class="mySlides fade">
+    <div class="numbertext">5 / 11</div>
+    <img src="images/img5.jpg" style="width:100%">
+    <div class="text">FIVE</div>
+  </div>
+
+<div class="mySlides fade">
+    <div class="numbertext">6 / 11</div>
+    <img src="images/img6.jpg" style="width:100%">
+    <div class="text">SIX</div>
+  </div>
+
+<div class="mySlides fade">
+    <div class="numbertext">7 / 11</div>
+    <img src="images/img7.jpg" style="width:100%">
+    <div class="text">SEVEN</div>
+  </div>
+
+<div class="mySlides fade">
+    <div class="numbertext">8 / 11</div>
+    <img src="images/img8.jpg" style="width:100%">
+    <div class="text">EIGHT</div>
+  </div>
+
+<div class="mySlides fade">
+    <div class="numbertext">9 / 11</div>
+    <img src="images/img9.jpg" style="width:100%">
+    <div class="text">NINE</div>
+  </div>
+
+<div class="mySlides fade">
+    <div class="numbertext">10 / 11</div>
+    <img src="images/img10.jpg" style="width:100%">
+    <div class="text">TEN</div>
+  </div>
+
+<div class="mySlides fade">
+    <div class="numbertext">11 / 11</div>
+    <img src="images/img11.jpg" style="width:100%">
+    <div class="text">ELEVEN</div>
+  </div>  
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+  <span class="dot" onclick="currentSlide(11)"></span>   
+  
+</div>
+<script>
+		var slideIndex = 1;
+		showSlides(slideIndex);
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {slideIndex = 1}    
+		if (n < 1) {slideIndex = slides.length}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex-1].style.display = "block";  
+		dots[slideIndex-1].className += " active";
+	}
+	</script>
+
+	<footer>
+		<p>Email: greenstrips@earth.com<br/><br/>
+		Phone: 0123456789<br/><br/>
+		&copy; Srimoyee Bhattacharyya and Soumi Ray.All Rights Reserved.</p>
+	</footer>
+</main>
+</body>
+</html>
