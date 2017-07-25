@@ -3,7 +3,7 @@ var app = express();
 
 //your routes here
 app.get('/', function (req, res) {
-    res.send("Hello World!");
+    res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.listen(80, function () {
