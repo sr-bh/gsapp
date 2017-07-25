@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var bodyParser = require('body-parser');
+//var bodyParser = require('body-parser');
 
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 //your routes here
 app.get('/', function (req, res) {
