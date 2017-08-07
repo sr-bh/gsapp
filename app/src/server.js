@@ -7,7 +7,7 @@ var path = require('path');
 
 //your routes here
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, '/ui', 'index.html'));
+    res.sendFile(path.join(__dirname, '/ui', 'template.html'));
 });
 
 app.get('/ui/:fileName', function (req, res) {
@@ -19,5 +19,5 @@ app.get('/ui/images/:fileName', function (req, res) {
 });
 
 app.listen(80, function () {
-  console.log('Example app listening on port 8080!');
+  console.log('Example app listening on port 80!');
 });
