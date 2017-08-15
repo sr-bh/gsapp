@@ -15,7 +15,7 @@
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
+  <div class="w3-bar w3-text-white" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
@@ -24,62 +24,60 @@
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> OUR WORK</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
     <a href="advertise.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i> ADVERTISE</a>
-
-
-		<!--SIGN IN PAGE STARTS HERE-->
-		<button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-in "></i> SIGN IN</button>
+    <button id="navSignin" onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-in "></i> SIGN IN </button>
+    <button id="navSignout" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-out"></i> SIGN OUT</button>
+  </div>
+  <!--SIGN IN PAGE STARTS HERE-->
 		<div id="id01" class="modal">
 			<form class="modal-content animate" action="/action_page.php">
-		<div class="imgcontainer">
-		<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
-		<img src="./images/signin.jpg" alt="Avatar" class="avatar">
-		</div>
+		  <div class="imgcontainer">
+		    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+		    <img src="./ui/images/signin.jpg" alt="Avatar" class="avatar">
+		  </div>
 
-		<div class="container">
-		<label><b>Username</b></label>
-		<input type="text" placeholder="Enter Username" name="uname" required>
+  		<div class="container">
+    		<label><b>Username</b></label>
+    		<input type="text" placeholder="Enter Username" name="uname" id="username" required>
 
-		<label><b>Password</b></label>
-		<input type="password" placeholder="Enter Password" name="psw" required>
+    		<label><b>Password</b></label>
+    		<input type="password" placeholder="Enter Password" name="psw" id="password" required>
+  		</div>
 
-		<button id="signin" type="submit">SIGN IN</button>
-		</div>
-
-		<div class="container" style="background-color:#f1f1f1">
-		<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-		<button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block';" id="signupbtn">New member? Sign up here.</button>
-		</div>
-		</form>
+  		<div class="container" style="background-color:#f1f1f1">
+    		<input id="signin" type="submit" value="SIGN IN">
+        <button type="button" id="btnchange" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block';" >New member? Sign up here.</button>
+  		</div>
+		  </form>
 		</div>
     <!--SIGN IN PAGE ends HERE-->
+
     <!--SIGN UP PAGE starts HERE-->
-        <div id="id02" class="modal">
-            <form class="modal-content animate" action="/action_page.php">
+    <div id="id02" class="modal">
+      <div id="signupform" class="modal-content animate">
         <div class="imgcontainer">
         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close">&times;</span>
-        <img src="./images/signin.jpg" alt="Avatar" class="avatar">
+        <img src="./ui/images/signin.jpg" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
         <label><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+        <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
 
         <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <input type="password" id="pwd" placeholder="Enter Password" name="psw" required>
 
-        <label><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button id="signin" type="submit">SIGN UP</button>
+        <label><b>Confirm Password</b></label>
+        <input type="password" id="cpwd" placeholder="Confirm Password" name="psw" required>
+        <div id="error-msg"></div>
+        <div id="success-msg"></div>
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
-        <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="button" onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block';" id="signupbtn">Sign in here.</button>
+        <button id="signup" type="submit">SIGN UP</button>
+        <button type="button" id="btnchange" onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block';">Sign in here.</button>
         </div>
-        </form>
-        </div>
-  </div>
+      </div>
+    </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
@@ -94,7 +92,7 @@
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-xlarge w3-wide w3-animate-opacity"><img src="./images/logo.jpg" class="w3-round w3-image w3-center" alt="Our Logo"  width="100%" height="100%"></span>
+    <span class="w3-center w3-padding-large w3-xlarge w3-wide w3-animate-opacity"><img src="./ui/images/logo.jpg" class="w3-round w3-image w3-center" alt="Our Logo"  width="100%" height="100%"></span>
   </div>
 </div>
 
@@ -105,9 +103,9 @@
   <p>We are a Kolkata based startup aiming at reducing plastic usage in our city. We sell durable, convenient paper bags at the price of plastic ones. Green Strips basically addresses three problems: proliferation of plastic waste, inaccessibility of advertisements for small local businessmen and lack of employment opportunities for underprivileged women..</p>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-	  <img src="./images/img3.jpg" class="w3-round w3-image " alt="Where we work" width="500" height="444">
+	  <img src="./ui/images/img3.jpg" class="w3-round w3-image " alt="Where we work" width="500" height="444">
 	  <br><br>
-	  <img src="./images/bag.jpg" class="w3-round w3-image " alt="Bag Samples" width="500" height="444">
+	  <img src="./ui/images/bag.jpg" class="w3-round w3-image " alt="Bag Samples" width="500" height="444">
     </div>
 
     <!-- Hide this text on small devices -->
@@ -124,19 +122,19 @@
 
 	<div class="mySlides fade">
 	  <div class="numbertext">1 / 3</div>
-	  <img src="./images/mission.jpg" style="width:100%; height:10%">
+	  <img src="./ui/images/mission.jpg" style="width:100%; height:10%">
 	  <div class="text"></div>
 	</div>
 
 	<div class="mySlides fade">
 	  <div class="numbertext">2 / 3</div>
-	  <img src="./images/signin.jpg" style="width:100%; height:10%">
+	  <img src="./ui/images/signin.jpg" style="width:100%; height:10%">
 	  <div class="text"></div>
 	</div>
 
 	<div class="mySlides fade">
 	  <div class="numbertext">3 / 3</div>
-	  <img src="./images/how_it_works.jpg" style="width:100%; height:10%">
+	  <img src="./ui/images/how_it_works.jpg" style="width:100%; height:10%">
 	  <div class="text"></div>
 	</div>
 
@@ -184,44 +182,44 @@
 <!-- Container (Portfolio Section) -->
 <div class="w3-content w3-container w3-padding-64" id="portfolio">
   <h3 class="w3-center">OUR WORK</h3>
-  <p class="w3-center"><em>Here are some of our current endorsement.<br> Click on the images to make them bigger</em></p><br>
+  <p class="w3-center"><em>Here are some of our current endorsement.</em></p><br>
 
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div class="w3-row-padding w3-center">
     <div class="w3-col m3">
-      <img src="./images/emami.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Emami">
+      <img src="./ui/images/emami.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Emami">
     </div>
 
     <div class="w3-col m3">
-      <img src="./images/titan.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Titan">
+      <img src="./ui/images/titan.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Titan">
     </div>
 
     <div class="w3-col m3">
-      <img src="./images/visa.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Visa">
+      <img src="./ui/images/visa.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Visa">
     </div>
 
     <div class="w3-col m3">
-      <img src="./images/mission.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Mission">
+      <img src="./ui/images/mission.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Mission">
     </div>
   </div>
 
   <div class="w3-row-padding w3-center w3-section">
     <div class="w3-col m3">
-      <img src="./images/why_advertise.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Why Advertise">
+      <img src="./ui/images/why_advertise.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Why Advertise">
     </div>
 
     <div class="w3-col m3">
-      <img src="./images/emami.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Emami">
+      <img src="./ui/images/emami.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Emami">
     </div>
 
     <div class="w3-col m3">
-      <img src="./images/titan.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Titan">
+      <img src="./ui/images/titan.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Titan">
     </div>
 
     <div class="w3-col m3">
-      <img src="./images/back1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
+      <img src="./ui/images/back1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Sailing">
     </div>
-    <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
+    <!--<button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>-->
   </div>
 </div>
 
@@ -263,5 +261,9 @@
 &copy; Soumi Ray and Srimoyee Bhattacharyya. All Rights Reserved.</p>
 </footer>
 <script src="./ui/script.js"></script>
+<script src="https://github.com/hasura/js-sdk/releases/download/v0.1.3/hasura.min.js"></script>
+<script>
+    hasura.setProject('bloodless10');
+</script>
 </body>
 </html>

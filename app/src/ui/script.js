@@ -1,3 +1,9 @@
+var navSignin = document.getElementById('navSignin');
+var navSignout = document.getElementById('navSignout');
+
+successMsg = document.getElementById('success-msg');
+errorMsg = document.getElementById('error-msg');
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -13,7 +19,7 @@ function myFunction() {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-top" + " w3-white";
     } else {
-        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "w3-bar w3-text-white");
     }
 }
 
@@ -28,13 +34,62 @@ function toggleFunction() {
 }
 // Get the modal
 var modal = document.getElementById('id01');
-	// When the user clicks anywhere outside of the modal, close it
+	// When the user clicks anywhere outside of the modal close it
 	window.onclick = function(event) {
 	if (event.target == modal) {
 		modal.style.display = "none";
 	}
 }
+function validateForm() {
+    var username = document.getElementById("uname").value;
+    var password = document.getElementById("pwd").value;
+    var confirm = document.getElementById("cpwd").value;
+    errorMsg.innerHTML="";
+    if (username == "") {
+        console.log('myerr:no username');
+        errorMsg.innerHTML="Username field is empty";
+        return false;
+    }
+    if(password==""){
+        console.log('myerr:no pwd');
+        errorMsg.innerHTML = errorMsg.innerHTML + "&#13;&#10;"+"Password field is empty";
+        return false;
+    }
+    if(password!=confirm || confirm==""){
+        console.log('myerr:no match');
+        errorMsg.innerHTML = errorMsg.innerHTML + "&#13;&#10;" + "Password and confirm password do not match";
+        return false;
+    }
+    return true;
+}
+//on sign in
 
+//on sign up
+var signup=document.getElementById('signup');
+signup.onclick=function(){
+    /* New session */
+    if (validateForm()){
+        hasura.setUsername(document.getElementById("uname").value);
+        hasura.auth.signup(document.getElementById("pwd").value,
+        function onSuccess(){
+            errorMsg.style.display='none';
+            successMsg.style.display='block';
+            successMsg.innerHTML ="User created succesfully!";
+            navSignin.style.display='none';
+            navSignout.style.display='block';
+        },
+        function onError(r){
+            successMsg.style.display='none';
+            errorMsg.style.display='block';
+            navSignin.style.display='block';
+            navSignout.style.display='none';
+            errorMsg.innerHTML ="Error: "+ (r.code?r.code:r.message)+". Try again!";
+        });
+    }
+    else{
+        errorMsg.style.display='block';
+    }
+};
 var slideIndex = 0;
 	showSlides();
 
