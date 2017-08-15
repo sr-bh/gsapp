@@ -12,6 +12,14 @@ function onClick(element) {
   captionText.innerHTML = element.alt;
 }
 
+function signupClose(){
+    document.getElementById('id02').style.display='none';
+    document.getElementById('uname').value='';
+    document.getElementById('pwd').value='';
+    document.getElementById('cpwd').value='';
+    errorMsg.style.display='none';
+    successMsg.style.display='none';
+}
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
@@ -66,9 +74,11 @@ function validateForm() {
 
 //on sign up
 var signup=document.getElementById('signup');
-signup.onclick=function(){
+function SignUp(){
     /* New session */
     if (validateForm()){
+        errorMsg.style.display='block';
+        errorMsg.innerHTML="Waiting...";
         hasura.setUsername(document.getElementById("uname").value);
         hasura.auth.signup(document.getElementById("pwd").value,
         function onSuccess(){
