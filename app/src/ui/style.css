@@ -1,127 +1,194 @@
-body{
-	background: url("ui/images/back.jpg") no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
 }
-@media only screen and (min-width : 320px) and (max-width : 600px) {
-	body{
-		background: url("ui/images/back.jpg") no-repeat center center fixed;
-		-webkit-background-size: 100%; 
-    		-moz-background-size: 100%; 
-    		-o-background-size: 100%; 
-    		background-size: 100%; 
-    		-webkit-background-size: cover; 
-    		-moz-background-size: cover; 
-   	 	-o-background-size: cover; 
-   	 	background-size: cover
-	}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-h1{
-	background:rgba(218,234,213,0.60);
-	text-align:center;
-	color:#000000;
-	font-size:x-large;
-	text-transform:UPPERCASE;
-	font-family:Times New Roman;
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('./images/back1.jpg');
+    min-height: 100%;
 }
-nav a{
-	display:inline-block;
-	margin:8%;
-	border-radius:5px;
-	text-decoration:none;
-	padding:2%;
-	color:#000000;
-	width:11%;
-	height:20px;
-	background:rgba(218,234,213,0.60);
-	text-align:center;
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("./images/leaves_raindrop.jpg");
+    min-height: 400px;
 }
-@media only screen and (min-width : 320px) and (max-width : 600px) {
-	nav a{
-		width:90%;
-		overflow:hidden;
-	}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("./images/back1.jpg");
+    min-height: 400px;
 }
-a:hover{
-	background-color: #FFFFFF;
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
 }
-body{
-	padding:10px;
-	margin:1%;
+
+
+/*Login styling starts here*/
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
-h2{
-	color: #FFFFFF;
-	text-align:center;
+
+/* Set a style for all buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 2px 20px;
+    margin: 1px 0;
+    border: none;
+    cursor: pointer;
+    width:auto;
 }
-h3{
-	color: #000000;
-	text-align:center;
-	line-height:25px;
+
+button:hover {
+    opacity: 0.8;
 }
-footer{
-	horizontal-align:middle;
-	background-position:center;
-	margin-left:35%;
-	margin-top:5%;
-	border-radius:5px;
-	text-decoration:none;
-	padding:1%;
-	color:#000000;
-	width:30%;
-	height:50%;
-	background:rgba(218,234,213,0.60);
-	text-align:center;
-	font-weight:bold;
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #E74C3C;
 }
-@media only screen and (min-width : 320px) and (max-width : 600px) {
-	footer{
-		width:55%;
-		margin:18%;
-		padding:5%;
-		overflow:hidden;
-	}
-}	
+#signin {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #229954;
+    position: relative;
+}
+#signupbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #DC7633;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}/*Login styling ends here*/
+
+
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+
+/* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
 }
 
-.mySlides {
-    display: none;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
 /* Caption text */
 .text {
-  color: #FFFFFF;
+  color: #f2f2f2;
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
@@ -141,7 +208,6 @@ footer{
 
 /* The dots/bullets/indicators */
 .dot {
-  cursor:pointer;
   height: 13px;
   width: 13px;
   margin: 0 2px;
@@ -151,7 +217,7 @@ footer{
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
+.active {
   background-color: #717171;
 }
 
@@ -164,11 +230,31 @@ footer{
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .4}
   to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+footer{
+horizontal-align:middle;
+background-position:center;
+margin-top:5%;
+border-radius:5px;
+text-decoration:none;
+padding:1%;
+color:#000000;
+width:100%;
+height:10%;
+background:rgba(218,234,213,0.60);
+text-align:center;
+font-weight:bold;
 }
