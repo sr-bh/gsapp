@@ -18,6 +18,6 @@ app.get('/ui/images/:fileName', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'images', req.params.fileName));
 });
 
-app.listen(80, function () {
-  console.log('Example app listening on port 80!');
+app.listen(8080, function () {
+  console.log('Example app listening on port 8080!');
 });
