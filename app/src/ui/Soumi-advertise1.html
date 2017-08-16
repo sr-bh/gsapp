@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Green Strips</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./styleadvertise1.css">
+<link rel="stylesheet" href="./styleadvertise.css">
+</head>
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#home" class="w3-bar-item w3-button">HOME</a>
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> OUR WORK</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="./ui/Soumi-advertise1.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i> ADVERTISE</a>
+
+
+<!--SIGN IN PAGE STARTS HERE-->
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-in "></i> SIGN IN</button>
+<div id="id01" class="modal">
+	<form class="modal-content animate" action="/action_page.php">
+<div class="imgcontainer">
+<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+<img src="./images/signin.jpg" alt="Avatar" class="avatar">
+</div>
+
+<div class="container">
+<label><b>Username</b></label>
+<input type="text" placeholder="Enter Username" name="uname" required>
+
+<label><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="psw" required>
+
+<button id="signin" type="submit">SIGN IN</button>
+</div>
+
+<div class="container" style="background-color:#f1f1f1">
+<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+<button type="button" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block';" id="signupbtn">New member? Sign up here.</button>
+</div>
+</form>
+</div>
+<!--SIGN IN PAGE ends HERE-->
+<!--SIGN UP PAGE starts HERE-->
+<div id="id02" class="modal">
+    <form class="modal-content animate" action="/action_page.php">
+<div class="imgcontainer">
+<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close">&times;</span>
+<img src="./images/signin.jpg" alt="Avatar" class="avatar">
+</div>
+
+<div class="container">
+<label><b>Username</b></label>
+<input type="text" placeholder="Enter Username" name="uname" required>
+
+<label><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="psw" required>
+
+<label><b>Password</b></label>
+<input type="password" placeholder="Enter Password" name="psw" required>
+
+<button id="signin" type="submit">SIGN UP</button>
+</div>
+
+<div class="container" style="background-color:#f1f1f1">
+<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+<button type="button" onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block';" id="signupbtn">Sign in here.</button>
+</div>
+</form>
+</div>
+</div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">OUR WORK</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+	<a href="signin.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-sign-in"></i> SIGN IN</a>
+	<a href="advertise1.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i> ADVERTISE</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-xlarge w3-wide w3-white w3-animate-opacity">ADVERTISE</span>
+  </div>
+</div>
+
+<!--Advertise page starts here-->
+
+<br>
+<h2>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Select products as per your requirement</h2>
+<br>
+
+<div class="row w3-row w3-row-padding">
+  <div class="column w3-col m4">
+    <div class="card">
+    <div class="bag-image">
+      <img src="./images/2bag.jpg" alt="Bag1" style="width:100%">
+    </div>
+      <div class="container">
+        <h2>Book Store Bag</h2>
+		<p>PRODUCT DESCRIPTION</p>
+		<p>SIZE : 12.5" x 10" </br>
+		STRENGTH :Holds upto 3.5 kg.</br>
+		LIFE SPAN : 2 months</br></p>
+		a. Quantity (between 1 and 100):
+		<input type="number" name="quantity" min="1" max="100"></br>
+		b. Select Package Type:<br>
+		<input required type = "radio" value="ssa" required> SINGLE SIDE ADVERTISING<br/>
+		<input required type = "radio" value="bsa" required> BOTH SIDE ADVERTISING<br/>
+        <p><button class="button">Add to cart</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column w3-col m4">
+    <div class="card">
+    <div class="bag-image">
+      <img src="./images/1bag.jpg" alt="Bag2" style="width:100%">
+    </div>
+      <div class="container">
+        <h2>Medical Store Bag</h2>
+		<p>PRODUCT DESCRIPTION</p>
+		<p>SIZE : 9.5" x 7" </br>
+		STRENGTH :Holds upto 2 kg.</br>
+		LIFE SPAN : 2 months</br></p>
+		a. Quantity (between 1 and 100):
+		<input type="number" name="quantity" min="1" max="100"></br>
+		b. Select Package Type:<br>
+		<input required type = "radio"  value="ssb" required> SINGLE SIDE ADVERTISING<br/>
+		<input required type = "radio"  value="bsb" required> BOTH SIDE ADVERTISING<br/>
+        <p><button class="button">Add to cart</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column w3-col m4">
+    <div class="card">
+    <div class="bag-image">
+      <img src="./images/pam.jpg" alt="Pamphlet" style="width:100%">
+    </div>
+      <div class="container">
+        <h2>Pamphlets</h2>
+		<p>PRODUCT DESCRIPTION</p>
+		<p>SIZE : 7.5" x 9" </br></p>
+		a. Quantity (between 1 and 100):
+		<input type="number" name="quantity" min="1" max="100"></br>
+		b. Select Package Type:<br>
+		<input required type = "radio"  value="ssc" required> SINGLE SIDE ADVERTISING<br/>
+		<input required type = "radio"  value="bsc" required> BOTH SIDE ADVERTISING<br/>
+        <p><button class="button">Add to cart</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Advertise page ends here-->
+<div class="w3-center">
+<button class="w3-button" style="background-color: green"><a href="advertiseform.html">Advertise</a></button>
+</div>
+
+</br>
+<footer>
+&copy; Soumi Ray and Srimoyee Bhattacharyya. All Rights Reserved.</p>
+</footer>
+<script src="./script.js"></script>
+</body>
+</html>

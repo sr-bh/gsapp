@@ -1,3 +1,13 @@
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "w3-bar w3-text-white");
+    }
+}
 var navSignin = document.getElementById('navSignin');
 var navSignout = document.getElementById('navSignout');
 
@@ -19,16 +29,6 @@ function signupClose(){
     document.getElementById('cpwd').value='';
     errorMsg.style.display='none';
     successMsg.style.display='none';
-}
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card-2" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "w3-bar w3-text-white");
-    }
 }
 
 // Used to toggle the menu on small screens when clicking on the menu button
@@ -73,12 +73,11 @@ function validateForm() {
 //on sign in
 
 //on sign up
-var signup=document.getElementById('signup');
 function SignUp(){
     /* New session */
     if (validateForm()){
-        errorMsg.style.display='block';
-        errorMsg.innerHTML="Waiting...";
+        successMsg.style.display='block';
+        successMsg.innerHTML="Waiting...";
         hasura.setUsername(document.getElementById("uname").value);
         hasura.auth.signup(document.getElementById("pwd").value,
         function onSuccess(){

@@ -1,10 +1,12 @@
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
-    height: 100%;
     color: #777;
     line-height: 1.8;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    height:100%;
 }
-
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
     background-attachment: fixed;
@@ -40,8 +42,30 @@ body, html {
         background-attachment: scroll;
     }
 }
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+    .modal-content{
+      min-width: 95%;
+    }
+}/*Login styling ends here*/
 
-
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+@media only screen and (max-width: 800px) {
+  .modal-content{
+      min-width: 90%;
+      max-width: 95%;
+    }
+}
 /*Login styling starts here*/
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -145,7 +169,7 @@ span.psw {
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 2% auto 2% auto; /* 2% from the top, 2% from the bottom and centered */
+    margin: 4% auto 4% auto; /* 4% from the top, 4% from the bottom and centered */
     border: 1px solid #888;
     max-width: 50%;/*Could be more or less, depending on screen size */
 }
@@ -181,19 +205,6 @@ span.psw {
     from {transform: scale(0)}
     to {transform: scale(1)}
 }
-
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-    span.psw {
-       display: block;
-       float: none;
-    }
-    .cancelbtn {
-       width: 100%;
-    }
-}/*Login styling ends here*/
-
 
 * {box-sizing:border-box}
 body {font-family: Verdana,sans-serif;}
@@ -259,10 +270,6 @@ body {font-family: Verdana,sans-serif;}
   to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
 
 footer{
 horizontal-align:middle;

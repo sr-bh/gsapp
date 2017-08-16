@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-text-white" id="myNavbar">
@@ -23,7 +22,7 @@
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> OUR WORK</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="advertise.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i> ADVERTISE</a>
+    <a href="./ui/Soumi-advertise1.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i> ADVERTISE</a>
     <button id="navSignin" onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-in "></i> SIGN IN </button>
     <button id="navSignout" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-out"></i> SIGN OUT</button>
   </div>
@@ -44,7 +43,7 @@
   		</div>
 
   		<div class="container" style="background-color:#f1f1f1">
-    		<input id="signin" type="submit" value="SIGN IN">
+    		<button id="signin" type="button" onclick="SignIn()">SIGN IN</button>
         <button type="button" id="btnchange" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block';" >New member? Sign up here.</button>
   		</div>
 		  </form>
@@ -80,12 +79,12 @@
     </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">OUR WORK</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="advertise.html" class="w3-bar-item w3-button"> ADVERTISE</a>
-    <button id="navSignin" onclick="toggleFunction();SignUp(); document.getElementById('id01').style.display='block';" class="w3-bar-item w3-button">SIGN IN</button>
+    <a href="./ui/Soumi-advertise1.html" class="w3-bar-item w3-button"> ADVERTISE</a>
+    <button id="navSignin" onclick="toggleFunction(); document.getElementById('id01').style.display='block';" class="w3-bar-item w3-button">SIGN IN</button>
     <button id="navSignout" class="w3-bar-item w3-button"> SIGN OUT</button>
   </div>
 </div>
@@ -241,26 +240,26 @@
 </div>
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
+<div class="w3-content w3-container" id="contact">
   <h3 class="w3-center">REACH US AT</h3>
   <p class="w3-center"><em>We'd love your feedback!</em></p>
 
-  <div class="w3-row w3-padding-32 w3-section">
+  <div class="w3-row w3-section">
     <div class="w3-col m4 w3-container">
     </div>
-    <div class="w3-col m8 w3-panel">
-      <div class="w3-large w3-margin-bottom">
+    <div class="w3-col m8">
+      <div class="w3-margin-bottom">
         <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Kolkata, India<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: 8334066929,9836114201,9563636398<br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <span>Phone: 8334066929,9836114201,9563636398</span><br>
         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: contact@greenstrips.in<br>
       </div>
     </div>
   </div>
 </div>
-
 <footer>
 &copy; Soumi Ray and Srimoyee Bhattacharyya. All Rights Reserved.</p>
 </footer>
+
 <script src="./ui/script.js"></script>
 <script src="https://github.com/hasura/js-sdk/releases/download/v0.1.3/hasura.min.js"></script>
 <script>
