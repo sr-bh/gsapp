@@ -68,7 +68,7 @@ body, html {
 }
 /*Login styling starts here*/
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email], input[type=number], select{
     width: 95%;
     padding: 10px 20px;
     margin: 8px auto 8px auto;
@@ -78,15 +78,15 @@ input[type=text], input[type=password] {
 }
 /*button styling*/
 .submit-btn{
-  border:3px solid green;
+  border:3px solid #138D75;
   border-radius: 5px;
-  background-color: #229954;
+  background-color: #138D75;
   color: white;
 }
 .submit-btn:hover  {
   font-weight: bold;
   background-color: white;
-  color:green;
+  color:#138D75;
 }
 #navSignout{
   display: none;

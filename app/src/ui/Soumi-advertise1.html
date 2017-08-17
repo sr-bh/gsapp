@@ -42,7 +42,7 @@
             <form class="modal-content animate" action="/action_page.php">
           <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
-            <img src="./ui/images/signin.jpg" alt="Avatar" class="avatar">
+            <img src="./images/signin.jpg" alt="Avatar" class="avatar">
           </div>
 
         <div class="container">
@@ -69,7 +69,7 @@
       <div id="signupform" class="modal-content animate">
         <div class="imgcontainer">
         <span onclick="signupClose()" class="close" title="Close">&times;</span>
-        <img src="./ui/images/signin.jpg" alt="Avatar" class="avatar">
+        <img src="./images/signin.jpg" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
@@ -104,7 +104,7 @@
 <!--Advertise page starts here-->
 
 <br>
-<h2>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Select products as per your requirement</h2>
+<h2 style="padding:4%;">&emsp;Select products as per your requirement</h2>
 <br>
 
 <div class="row w3-row w3-row-padding">
@@ -122,8 +122,9 @@
 		a. Quantity (between 1 and 100):
 		<input type="number" name="quantity" min="1" max="100"></br>
 		b. Select Package Type:<br>
-		<input required type = "radio" value="ssa" required> SINGLE SIDE ADVERTISING<br/>
-		<input required type = "radio" value="bsa" required> BOTH SIDE ADVERTISING<br/>
+        <div>
+		<input required type = "radio" name="side-book" value="ssa" required checked> SINGLE SIDE ADVERTISING<br/>
+		<input required type = "radio" name="side-book" value="bsa" required> BOTH SIDE ADVERTISING<br/></div>
         <p><button class="button">Add to cart</button></p>
       </div>
     </div>
@@ -142,8 +143,8 @@
 		a. Quantity (between 1 and 100):
 		<input type="number" name="quantity" min="1" max="100"></br>
 		b. Select Package Type:<br>
-		<input required type = "radio"  value="ssb" required> SINGLE SIDE ADVERTISING<br/>
-		<input required type = "radio"  value="bsb" required> BOTH SIDE ADVERTISING<br/>
+		<input required type = "radio" name="side-med" value="ssb" required checked> SINGLE SIDE ADVERTISING<br/>
+		<input required type = "radio" name="side-med" value="bsb" required> BOTH SIDE ADVERTISING<br/>
         <p><button class="button">Add to cart</button></p>
       </div>
     </div>
@@ -160,8 +161,8 @@
 		a. Quantity (between 1 and 100):
 		<input type="number" name="quantity" min="1" max="100"></br>
 		b. Select Package Type:<br>
-		<input required type = "radio"  value="ssc" required> SINGLE SIDE ADVERTISING<br/>
-		<input required type = "radio"  value="bsc" required> BOTH SIDE ADVERTISING<br/>
+		<input required type = "radio" name="side" value="ssc" required checked> SINGLE SIDE ADVERTISING<br/>
+		<input required type = "radio" name="side" value="bsc" required> BOTH SIDE ADVERTISING<br/>
         <p><button class="button">Add to cart</button></p>
       </div>
     </div>
@@ -177,5 +178,9 @@
 &copy; Soumi and Srimoyee. All Rights Reserved.</p>
 </footer>
 <script src="./script.js"></script>
+<script src="https://github.com/hasura/js-sdk/releases/download/v0.1.3/hasura.min.js"></script>
+<script>
+    hasura.setProject('bloodless10');
+</script>
 </body>
 </html>
