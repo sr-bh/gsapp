@@ -12,6 +12,9 @@
 </head>
 
 <body>
+<!--snackbar to show confirmations or error messages-->
+<div id="snackbar">Some message..</div>
+
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar w3-text-white" id="myNavbar">
@@ -20,11 +23,21 @@
     </a>
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> OUR WORK</a>
+    <a href="#work" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> OUR WORK</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
     <a href="./ui/Soumi-advertise1.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i> ADVERTISE</a>
     <button id="navSignin" onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-in "></i> SIGN IN </button>
-    <button id="navSignout" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-out"></i> SIGN OUT</button>
+    <button id="navSignout" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;" type="button" onclick="SignOut();"><i class="fa fa-sign-out"></i> SIGN OUT</button>
+  </div>
+
+    <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+    <a href="#work" class="w3-bar-item w3-button" onclick="toggleFunction()">OUR WORK</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="./ui/Soumi-advertise1.html" class="w3-bar-item w3-button"> ADVERTISE</a>
+    <button id="snavSignin" onclick="toggleFunction(); document.getElementById('id01').style.display='block';" class="w3-bar-item w3-button" type="button">SIGN IN</button>
+    <button id="snavSignout" class="w3-bar-item w3-button" type="button" onclick="toggleFunction();SignOut();"> SIGN OUT</button>
   </div>
   <!--SIGN IN PAGE STARTS HERE-->
 		<div id="id01" class="modal">
@@ -40,10 +53,13 @@
 
     		<label><b>Password</b></label>
     		<input type="password" placeholder="Enter Password" name="psw" id="password" required>
+
+        <div id="error-msg-in"></div>
+        <div id="success-msg-in"></div>
   		</div>
 
   		<div class="container" style="background-color:#f1f1f1">
-    		<button id="signin" type="button" onclick="SignIn()">SIGN IN</button>
+    		<button id="signin" class="submit-btn" type="button" onclick="SignIn()">SIGN IN</button>
         <button type="button" id="btnchange" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block';" >New member? Sign up here.</button>
   		</div>
 		  </form>
@@ -67,28 +83,18 @@
 
         <label><b>Confirm Password</b></label>
         <input type="password" id="cpwd" placeholder="Confirm Password" name="psw" required>
+
         <div id="error-msg"></div>
         <div id="success-msg"></div>
         </div>
 
         <div class="container" style="background-color:#f1f1f1">
-        <button id="signup" type="submit" onclick="SignUp()">SIGN UP</button>
+        <button class="submit-btn" id="signup" type="submit" onclick="SignUp()">SIGN UP</button>
         <button type="button" id="btnchange" onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block';">Sign in here.</button>
         </div>
       </div>
     </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">OUR WORK</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="./ui/Soumi-advertise1.html" class="w3-bar-item w3-button"> ADVERTISE</a>
-    <button id="navSignin" onclick="toggleFunction(); document.getElementById('id01').style.display='block';" class="w3-bar-item w3-button">SIGN IN</button>
-    <button id="navSignout" class="w3-bar-item w3-button"> SIGN OUT</button>
-  </div>
 </div>
-
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
@@ -180,7 +186,7 @@
 </div>
 
 <!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
+<div class="w3-content w3-container w3-padding-64" id="work">
   <h3 class="w3-center">OUR WORK</h3>
   <p class="w3-center"><em>Here are some of our current endorsement.</em></p><br>
 
@@ -250,14 +256,14 @@
     <div class="w3-col m8">
       <div class="w3-margin-bottom">
         <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Kolkata, India<br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <span>Phone: 8334066929,9836114201,9563636398</span><br>
+        <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> <span>Phone: 8334066929, 9836114201, 9563636398</span><br>
         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: contact@greenstrips.in<br>
       </div>
     </div>
   </div>
 </div>
 <footer>
-&copy; Soumi Ray and Srimoyee Bhattacharyya. All Rights Reserved.</p>
+&copy; Soumi and Srimoyee. All Rights Reserved.</p>
 </footer>
 
 <script src="./ui/script.js"></script>
