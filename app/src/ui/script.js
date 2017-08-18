@@ -154,14 +154,16 @@ function SignIn(){
         hasura.setUsername(document.getElementById("username").value);
         hasura.auth.login(document.getElementById("password").value,
         function onSuccess(user){
-            errorMsgIn.style.display='none';
-            successMsgIn.style.display='block';
-            successMsgIn.innerHTML ="User logged in succesfully!";
+            //errorMsgIn.style.display='none';
+            //successMsgIn.style.display='block';
+            //successMsgIn.innerHTML ="User logged in succesfully!";
             document.getElementById('id01').style.display='none';
             navSignin.style.display='none';
             navSignout.style.display='block';
             snavSignin.style.display='none';
             snavSignout.style.display='block';
+            snackbar.innerHTML ="User logged in!";
+            snackbarShow();
         },
         function onError(r){
             successMsgIn.style.display='none';
@@ -187,13 +189,16 @@ function SignUp(){
         hasura.setUsername(document.getElementById("uname").value);
         hasura.auth.signup(document.getElementById("pwd").value,
         function onSuccess(){
-            errorMsg.style.display='none';
-            successMsg.style.display='block';
-            successMsg.innerHTML ="User created succesfully!";
+            //errorMsg.style.display='none';
+            //successMsg.style.display='block';
+            //successMsg.innerHTML ="User created succesfully!";
+            document.getElementById('id02').style.display='none';
             navSignin.style.display='none';
             navSignout.style.display='block';
             snavSignin.style.display='none';
             snavSignout.style.display='block';
+            snackbar.innerHTML ="User created successfully!";
+            snackbarShow();
         },
         function onError(r){
             successMsg.style.display='none';
