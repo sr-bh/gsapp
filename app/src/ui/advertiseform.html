@@ -12,6 +12,8 @@
 </head>
 
 <body>
+<!--snackbar to show confirmations or error messages-->
+<div id="snackbar">Some message..</div>
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
@@ -41,7 +43,7 @@
         <div id="id01" class="modal">
             <form class="modal-content animate" action="/action_page.php">
           <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+            <span onclick="document.getElementById('id01').style.display='none';signupClose();" class="close" title="Close">&times;</span>
             <img src="./images/signin.jpg" alt="Avatar" class="avatar">
           </div>
 
@@ -94,7 +96,7 @@
     </div>
 </div>
 <!-- First Parallax Image with Logo Text-->
-<div class="bgimg-1 w3-display-container w3-opacity-min" style="min-height: 60%">
+<div class="back1-img bgimg-3 w3-display-container w3-opacity-min" style="min-height: 60%">
   <div class="w3-display-middle w3-center" style="border:0.4em double white;padding:0.5%">
     <span class="w3-xxlarge w3-text-white w3-wide">Advertiser Informaion</span>
   </div>
@@ -127,10 +129,11 @@
   <option value="bangur" required>Bangur</option>
   <option value="saltlake" required>Salt Lake</option>
   <option value="collegestreet required">College Street</option>
-</select></br>
-<!-- <input type="text" name="city" required ><br/><br/> -->
- <h3>WHERE WE WORK</h3>
- <img src="./images/location.jpg" alt="Location" style="width:100%">
+</select></br><br/>
+ <div class="w3-center">
+    <h3>WHERE WE WORK</h3>
+    <img id="loc-map" src="./images/location.jpg" alt="Location">
+</div><br/>
 7. Zipcode:</br>
 <input type="number" name="zipcode" required ><br/><br/>
 8. Contact Name:</br>

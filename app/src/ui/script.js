@@ -69,8 +69,12 @@ function signupClose(){
     document.getElementById('uname').value='';
     document.getElementById('pwd').value='';
     document.getElementById('cpwd').value='';
+    document.getElementById('username').value='';
+    document.getElementById('password').value='';
     errorMsg.style.display='none';
     successMsg.style.display='none';
+    errorMsgIn.style.display='none';
+    successMsgIn.style.display='none';
 }
 
 // Used to toggle the menu on small screens when clicking on the menu button
@@ -83,12 +87,16 @@ function toggleFunction() {
     }
 }
 // Get the modal
-var modal = document.getElementById('id01');
+var modal1 = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
 	// When the user clicks anywhere outside of the modal close it
 	window.onclick = function(event) {
-	if (event.target == modal) {
-		modal.style.display = "none";
+	if (event.target == modal1) {
+		modal1.style.display = "none";
 	}
+    if (event.target == modal2) {
+        modal2.style.display = "none";
+    }
 }
 function validateSignUp() {
     var username = document.getElementById("uname").value;
@@ -134,6 +142,16 @@ function SignOut(){
         snavSignout.style.display='none';
         snackbar.innerHTML ="User logged out!";
         snackbarShow();
+        //document.getElementById('id02').style.display='none';
+        document.getElementById('uname').value='';
+        document.getElementById('pwd').value='';
+        document.getElementById('cpwd').value='';
+        document.getElementById('username').value='';
+        document.getElementById('password').value='';
+        errorMsg.style.display='none';
+        successMsg.style.display='none';
+        errorMsgIn.style.display='none';
+        successMsgIn.style.display='none';
     },
     function onError(r){
         navSignin.style.display='block';

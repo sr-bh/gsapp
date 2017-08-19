@@ -14,10 +14,11 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+.back1-img{
+  background-image: url('./images/back1.jpg');
+}
 /* First image (Logo. Full height) */
 .bgimg-1 {
-    background-image: url('./images/back1.jpg');
     min-height: 100%;
 }
 
@@ -29,10 +30,12 @@ body, html {
 
 /* Third image (Contact) */
 .bgimg-3 {
-    background-image: url("./images/back1.jpg");
     min-height: 400px;
 }
-
+#loc-map{
+  max-width: 50%;
+  max-height: 50%;
+}
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
@@ -70,8 +73,8 @@ body, html {
       max-width: 95%;
     }
     #loc-map{
-      max-width: 80%;
-      max-height: 80%;
+      max-width: 90%;
+      max-height: 90%;
     }
 }
 /*Login styling starts here*/
@@ -329,13 +332,10 @@ body {font-family: Verdana,sans-serif;}
   from {opacity: .4}
   to {opacity: 1}
 }
-
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
 }
-
-
 footer{
 horizontal-align:middle;
 background-position:center;
@@ -348,4 +348,42 @@ width:100%;
 height:10%;
 background:#424949;
 text-align:center;
+}
+
+/* Table styling starts here */
+table{
+  margin-top:5%;
+  border-radius:5px;
+  text-decoration:none;
+  padding:2%;
+  color:#000000;
+  width:100%;
+  height:20px;
+  background:rgba(218,234,213,0.60);
+  text-align:center;
+}
+nav a{
+  display:inline-block;
+  margin:6%;
+  border-radius:10px;
+  text-decoration:none;
+  padding:4.5%;
+  color:#FFFFFF;
+  width:20%;
+  height: 5%;
+  background:#000000;
+  text-align:center;
+}
+@media only screen and (min-width : 320px) and (max-width : 600px) {
+  nav a{
+    width:90%;
+    overflow:hidden;
+  }
+  #loc-map{
+      max-width: 90%;
+      max-height: 90%;
+    }
+}
+a:hover{
+  background-color: #A9DFBF;
 }
