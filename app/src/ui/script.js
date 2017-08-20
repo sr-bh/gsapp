@@ -208,13 +208,28 @@ function SignIn(){
         successMsgIn.style.display='none';
     }
 };
+//set adv_id on signup
+function setAdvId(){
+    var obj={},arg={};
+    obj["type"]="insert";
+    arg["table"]="Advertiser";
+    arg["objects"]=[{"id":hasura.user.id}];
+    obj["args"]=arg;
+    obj["returning"]="id";
+    hasura.data.query(obj, function onSuccess(result){
+        console.log("Advertiser ID added");
+    },
+    function onError(err){
+        console.error(err);
+    }, hasura.user.roles[0]);
+}
 //on sign up
 function SignUp(){
     /* New session */
     if (validateSignUp()){
         errorMsg.style.display='none';
         successMsg.style.display='block';
-        successMsg.innerHTML="Waiting...";
+        successMsg.innerHTML="Processing...";
         hasura.setUsername(document.getElementById("uname").value);
         hasura.auth.signup(document.getElementById("pwd").value,
         function onSuccess(){

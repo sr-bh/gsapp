@@ -102,17 +102,14 @@
     <span class="w3-center w3-padding-large w3-wide w3-animate-opacity w3-xxlarge w3-text-white w3-wide">ADVERTISE</span>
   </div>
 </div>
-
 <!--Advertise page starts here-->
-
-<br>
-<h2 class="w3-center" style="padding:4%;">&emsp;Select products as per your requirement</h2>
-<br>
-
+<br/>
+<h2 class="w3-center" style="padding:2%;">&emsp;Select products as per your requirement</h2>
+<br/>
 <div class="row w3-row w3-row-padding">
   <div class="column w3-col m4">
     <div class="card">
-    <div class="bag-image">
+    <div class="bag-image w3-center">
       <img src="./images/2bag.jpg" alt="Bag1">
     </div>
       <div class="info container">
@@ -123,65 +120,66 @@
 		STRENGTH :Holds upto 3.5 kg.<br/>
 		LIFE SPAN : 2 months<br/></p>
 		a. Quantity (between 1 and 100):
-		<input type="number" name="quantity" id="qty" min="1" max="100"><br/>
+		<input type="number" name="quantity" id="qty" min="1" max="100"><br/><br/>
 		b. Select Package Type:<br/>
         <div>
 		<input required type = "radio" name="side-book" value="ssa" id="ssa" required checked> SINGLE SIDE ADVERTISING<br/>
-		<input required type = "radio" name="side-book" value="bsa" id="bsa" required> BOTH SIDE ADVERTISING<br/></div>
+		<input required type = "radio" name="side-book" value="bsa" id="bsa" required> BOTH SIDE ADVERTISING<br/></div><br/>
         <button class="button cart" onclick="addToCart(this)">Add to cart</button>
     </div>
    </div>
   </div>
   <div class="column w3-col m4">
     <div class="card">
-    <div class="bag-image">
+    <div class="bag-image w3-center">
       <img src="./images/1bag.jpg" alt="Bag2">
     </div>
       <div class="info container">
         <h2>Medical Store Bag</h2>
         <p class="pid" style="display: none">102</p>
 		<p>PRODUCT DESCRIPTION</p>
-		<p>SIZE : 9.5" x 7" </br>
-		STRENGTH :Holds upto 2 kg.</br>
-		LIFE SPAN : 2 months</br></p>
+		<p>SIZE : 9.5" x 7" <br/>
+		STRENGTH :Holds upto 2 kg.<br/>
+		LIFE SPAN : 2 months<br/></p>
 		a. Quantity (between 1 and 100):
-		<input type="number" name="quantity" min="1" max="100"></br>
-		b. Select Package Type:<br>
+		<input type="number" name="quantity" min="1" max="100"><br/><br/>
+		b. Select Package Type:<br/>
 		<input required type = "radio" name="side-med" value="ssb" required checked> SINGLE SIDE ADVERTISING<br/>
-		<input required type = "radio" name="side-med" value="bsb" required> BOTH SIDE ADVERTISING<br/>
+		<input required type = "radio" name="side-med" value="bsb" required> BOTH SIDE ADVERTISING<br/><br/>
         <button class="button cart" onclick="addToCart(this)">Add to cart</button>
       </div>
     </div>
   </div>
   <div class="column w3-col m4">
     <div class="card">
-    <div class="bag-image">
+    <div class="bag-image w3-center">
       <img src="./images/2bag.jpg" alt="Pamphlet">
     </div>
       <div class="info container">
         <h2>Pamphlets</h2>
         <p class="pid" style="display: none">103</p>
 		<p>PRODUCT DESCRIPTION</p>
-		<p>SIZE : 7.5" x 9" </br></p>
+		<p>SIZE : 7.5" x 9" <br/><br/><br/></p>
 		a. Quantity (between 1 and 100):
-		<input type="number" name="quantity" min="1" max="100"></br></br>
-		b. Select Package Type:<br>
+		<input type="number" name="quantity" min="1" max="100"><br/><br/>
+		b. Select Package Type:<br/>
 		<input required type = "radio" name="side" value="ssc" required checked> SINGLE SIDE ADVERTISING<br/>
-		<input required type = "radio" name="side" value="bsc" required> BOTH SIDE ADVERTISING<br/></br>
+		<input required type = "radio" name="side" value="bsc" required> BOTH SIDE ADVERTISING<br/><br/>
         <button class="button cart" onclick="addToCart(this)">Add to cart</button>
       </div>
     </div>
   </div>
 </div>
 <br/><br/>
+<div id="err" style="display: none;text-align: center;width: 50%"></div><br/>
 <!--Advertise page ends here-->
 <div class="w3-center">
 <button class="submit-btn w3-padding-large" onclick="advertise()">ADVERTISE</button>
 </div>
 
-</br>
+<br/>
 <footer>
-&copy; Soumi and Srimoyee. All Rights Reserved.</p>
+<p>&copy; Soumi and Srimoyee. All Rights Reserved.</p>
 </footer>
 <script src="./script.js"></script>
 <script src="./adv.js"></script>

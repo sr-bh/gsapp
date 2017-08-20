@@ -180,13 +180,13 @@ However, delay the fade out process for 2.5 seconds */
     to {top: 0; opacity: 0;}
 }
 /*success and error message styling*/
-#error-msg, #error-msg-in{
+#error-msg, #error-msg-in, #err{
   width: 95%;
   padding: 10px 20px;
   margin: 8px 0;
   background-color: #FDEDEC;
   color:#7B241C;
-  border: 5px solid #CB4335  ;
+  border: 2px solid #CB4335  ;
   display:none;
 }
 #success-msg, #success-msg-in{
@@ -195,7 +195,7 @@ However, delay the fade out process for 2.5 seconds */
   margin: 8px 0;
   background-color: #D5F5E3;
   color:#196F3D;
-  border: 5px solid green;
+  border: 2px solid #196F3D;
   display: none;
 }
 /* Center the image and position the close button */

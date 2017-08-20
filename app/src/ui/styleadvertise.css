@@ -66,7 +66,12 @@ html {
   cursor: pointer;
   width: auto;
 }
-
+.cart{
+  display:block;
+  width:140px;
+  margin:2% auto;
+  padding:2%;
+}
 .button:hover {
   background-color: #555;
 }
