@@ -44,7 +44,7 @@
         <div id="id01" class="modal">
             <form class="modal-content animate" action="/action_page.php">
           <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none';signupClose();" class="close" title="Close">&times;</span>
+            <span onclick="signinClose();signupClose();" class="close" title="Close">&times;</span>
             <img src="./images/signin.jpg" alt="Avatar" class="avatar">
           </div>
 
@@ -61,7 +61,7 @@
 
         <div class="container" style="background-color:#f1f1f1">
             <button id="signin" class="submit-btn" type="button" onclick="SignIn()">SIGN IN</button>
-        <button type="button" id="btnchange" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block';" >New member? Sign up here.</button>
+        <button type="button" id="btnchange" onclick="signinClose(); document.getElementById('id02').style.display='block';" >New member? Sign up here.</button>
         </div>
           </form>
         </div>
@@ -71,7 +71,7 @@
     <div id="id02" class="modal">
       <div id="signupform" class="modal-content animate">
         <div class="imgcontainer">
-        <span onclick="signupClose()" class="close" title="Close">&times;</span>
+        <span onclick="signinClose();signupClose();" class="close" title="Close">&times;</span>
         <img src="./images/signin.jpg" alt="Avatar" class="avatar">
         </div>
 
@@ -91,7 +91,7 @@
 
         <div class="container" style="background-color:#f1f1f1">
         <button class="submit-btn" id="signup" type="submit" onclick="SignUp()">SIGN UP</button>
-        <button type="button" id="btnchange" onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block';">Sign in here.</button>
+        <button type="button" id="btnchange" onclick="signupClose(); document.getElementById('id01').style.display='block';">Sign in here.</button>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@
 <!--Advertise page starts here-->
 
 <br>
-<h2 style="padding:4%;">&emsp;Select products as per your requirement</h2>
+<h2 class="w3-center" style="padding:4%;">&emsp;Select products as per your requirement</h2>
 <br>
 
 <div class="row w3-row w3-row-padding">
@@ -128,7 +128,7 @@
         <div>
 		<input required type = "radio" name="side-book" value="ssa" id="ssa" required checked> SINGLE SIDE ADVERTISING<br/>
 		<input required type = "radio" name="side-book" value="bsa" id="bsa" required> BOTH SIDE ADVERTISING<br/></div>
-        <button class="button cart" onclick="addCart(this)">Add to cart</button>
+        <button class="button cart" onclick="addToCart(this)">Add to cart</button>
     </div>
    </div>
   </div>
@@ -149,7 +149,7 @@
 		b. Select Package Type:<br>
 		<input required type = "radio" name="side-med" value="ssb" required checked> SINGLE SIDE ADVERTISING<br/>
 		<input required type = "radio" name="side-med" value="bsb" required> BOTH SIDE ADVERTISING<br/>
-        <button class="button cart" onclick="addCart(this)">Add to cart</button>
+        <button class="button cart" onclick="addToCart(this)">Add to cart</button>
       </div>
     </div>
   </div>
@@ -168,7 +168,7 @@
 		b. Select Package Type:<br>
 		<input required type = "radio" name="side" value="ssc" required checked> SINGLE SIDE ADVERTISING<br/>
 		<input required type = "radio" name="side" value="bsc" required> BOTH SIDE ADVERTISING<br/></br>
-        <button class="button cart" onclick="addCart(this)">Add to cart</button>
+        <button class="button cart" onclick="addToCart(this)">Add to cart</button>
       </div>
     </div>
   </div>
@@ -176,7 +176,7 @@
 <br/><br/>
 <!--Advertise page ends here-->
 <div class="w3-center">
-<a href="advertiseform.html" style="text-decoration: none"><button class="submit-btn w3-padding-large">ADVERTISE</button></a>
+<button class="submit-btn w3-padding-large" onclick="advertise()">ADVERTISE</button>
 </div>
 
 </br>

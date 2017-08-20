@@ -43,7 +43,7 @@
         <div id="id01" class="modal">
             <form class="modal-content animate" action="/action_page.php">
           <div class="imgcontainer">
-            <span onclick="document.getElementById('id01').style.display='none';signupClose();" class="close" title="Close">&times;</span>
+            <span onclick="signinClose();signupClose();" class="close" title="Close">&times;</span>
             <img src="./images/signin.jpg" alt="Avatar" class="avatar">
           </div>
 
@@ -60,7 +60,7 @@
 
         <div class="container" style="background-color:#f1f1f1">
             <button id="signin" class="submit-btn" type="button" onclick="SignIn()">SIGN IN</button>
-        <button type="button" id="btnchange" onclick="document.getElementById('id01').style.display='none'; document.getElementById('id02').style.display='block';" >New member? Sign up here.</button>
+        <button type="button" id="btnchange" onclick="signinClose();document.getElementById('id02').style.display='block';" >New member? Sign up here.</button>
         </div>
           </form>
         </div>
@@ -70,7 +70,7 @@
     <div id="id02" class="modal">
       <div id="signupform" class="modal-content animate">
         <div class="imgcontainer">
-        <span onclick="signupClose()" class="close" title="Close">&times;</span>
+        <span onclick="signinClose();signupClose();" class="close" title="Close">&times;</span>
         <img src="./images/signin.jpg" alt="Avatar" class="avatar">
         </div>
 
@@ -90,7 +90,7 @@
 
         <div class="container" style="background-color:#f1f1f1">
         <button class="submit-btn" id="signup" type="submit" onclick="SignUp()">SIGN UP</button>
-        <button type="button" id="btnchange" onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block';">Sign in here.</button>
+        <button type="button" id="btnchange" onclick="signupClose();document.getElementById('id01').style.display='block';">Sign in here.</button>
         </div>
       </div>
     </div>

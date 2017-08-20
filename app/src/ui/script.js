@@ -18,6 +18,13 @@ navSignout.style.display='none';
 snavSignin.style.display='none';
 snavSignout.style.display='none';
 /*check if user is logged in and then show button*/
+function checkLogin(){
+    if(hasura.user.token!=null){
+        return true;
+    }else{
+        return false;
+    }
+}
 window.onload = function(){
     if(hasura.user.token!=null){
         console.log('user logged in');
@@ -62,19 +69,22 @@ function snackbarShow() {
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
-
-//clear all input fields on modal close
+//clear all input fields on sign in modal close
+function signinClose(){
+    document.getElementById('id01').style.display='none';
+    document.getElementById('username').value='';
+    document.getElementById('password').value='';
+    errorMsgIn.style.display='none';
+    successMsgIn.style.display='none';
+}
+//clear all input fields on sign up modal close
 function signupClose(){
     document.getElementById('id02').style.display='none';
     document.getElementById('uname').value='';
     document.getElementById('pwd').value='';
     document.getElementById('cpwd').value='';
-    document.getElementById('username').value='';
-    document.getElementById('password').value='';
     errorMsg.style.display='none';
     successMsg.style.display='none';
-    errorMsgIn.style.display='none';
-    successMsgIn.style.display='none';
 }
 
 // Used to toggle the menu on small screens when clicking on the menu button
@@ -92,10 +102,10 @@ var modal2 = document.getElementById('id02');
 	// When the user clicks anywhere outside of the modal close it
 	window.onclick = function(event) {
 	if (event.target == modal1) {
-		modal1.style.display = "none";
+		signinClose();
 	}
     if (event.target == modal2) {
-        modal2.style.display = "none";
+        signupClose();
     }
 }
 function validateSignUp() {
@@ -195,6 +205,7 @@ function SignIn(){
     }
     else{
         errorMsgIn.style.display='block';
+        successMsgIn.style.display='none';
     }
 };
 //on sign up
@@ -230,6 +241,7 @@ function SignUp(){
     }
     else{
         errorMsg.style.display='block';
+        successMsgIn.style.display='none';
     }
 };
 //Slideshow of images on index.html
