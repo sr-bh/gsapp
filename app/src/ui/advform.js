@@ -106,13 +106,13 @@ function checkAdv(){
     }, hasura.user.roles[0]);
 }
 function insertAdv(){
-    checkAdv();
     if(hasura.user.token==null){
         document.getElementById('id01').style.display='block';
         successMsgIn.innerHTML="Please sign in to add advertiser details";
         successMsgIn.style.display='block';
         return;
     }
+    checkAdv();
     if(validateAdvForm()){
         var obj={},arg={};
         obj["type"]="insert";
@@ -134,7 +134,7 @@ function insertAdv(){
         hasura.data.query(obj, function onSuccess(result){
             snackbar.innerHTML="Advertiser ID has been added. Redirecting...";
             snackbarShow();
-            setTimeout(function(){window.location='/ui/Soumi-advertise1.html';}, 3000);
+            setTimeout(function(){window.location='/ui/advertise.html';}, 2000);
         },
         function onError(err){
             console.error(err);

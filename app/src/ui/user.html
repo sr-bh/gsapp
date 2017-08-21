@@ -4,14 +4,16 @@
 <title>Green Strips</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./styletable.css">
-<link rel="stylesheet" href="./styleadvertise1.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./styleclasses.css">
 </head>
 
 <body>
+<div class="loading w3-center w3-xxlarge" style="height:99%;margin-top: 20%;">Loading...</div>
+<div class="content" style="display:none">
 <!--snackbar to show confirmations or error messages-->
 <div id="snackbar">Some message..</div>
 
@@ -25,7 +27,7 @@
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#work" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> OUR WORK</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-    <a href="./ui/Soumi-advertise1.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i> ADVERTISE</a>
+    <a href="./ui/advertise.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-newspaper-o"></i> ADVERTISE</a>
     <button id="navSignin" onclick="document.getElementById('id01').style.display='block'" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;"><i class="fa fa-sign-in "></i> SIGN IN </button>
     <button id="navSignout" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red;" type="button" onclick="SignOut();"><i class="fa fa-sign-out"></i> SIGN OUT</button>
   </div>
@@ -35,7 +37,7 @@
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
     <a href="#work" class="w3-bar-item w3-button" onclick="toggleFunction()">OUR WORK</a>
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
-    <a href="./ui/Soumi-advertise1.html" class="w3-bar-item w3-button"> ADVERTISE</a>
+    <a href="./ui/advertise.html" class="w3-bar-item w3-button"> ADVERTISE</a>
     <button id="snavSignin" onclick="toggleFunction(); document.getElementById('id01').style.display='block';" class="w3-bar-item w3-button" type="button">SIGN IN</button>
     <button id="snavSignout" class="w3-bar-item w3-button" type="button" onclick="toggleFunction();SignOut();"> SIGN OUT</button>
   </div>
@@ -44,7 +46,7 @@
             <form class="modal-content animate" action="/action_page.php">
           <div class="imgcontainer">
             <span onclick="document.getElementById('id01').style.display='none';signupClose();" class="close" title="Close">&times;</span>
-            <img src="./ui/images/signin.jpg" alt="Avatar" class="avatar">
+            <img src="./images/signin.jpg" alt="Avatar" class="avatar">
           </div>
 
         <div class="container">
@@ -71,7 +73,7 @@
       <div id="signupform" class="modal-content animate">
         <div class="imgcontainer">
         <span onclick="signupClose()" class="close" title="Close">&times;</span>
-        <img src="./ui/images/signin.jpg" alt="Avatar" class="avatar">
+        <img src="./images/signin.jpg" alt="Avatar" class="avatar">
         </div>
 
         <div class="container">
@@ -96,30 +98,44 @@
     </div>
 </div>
 <!-- First Parallax Image with Logo Text-->
-<div class="back1-img w3-display-container w3-opacity-min" style="min-height: 60%">
+<div class="back1-img bgimg-3 w3-display-container w3-opacity-min" style="height: 55%">
   <div class="w3-display-middle w3-center" style="border:0.4em double white;padding:0.5%">
-    <span class="w3-xxlarge w3-text-white w3-wide">USER DETAILS</span>
+    <span class="w3-xxlarge w3-text-white w3-wide">User Details</span>
   </div>
 </div>
-
-<!--table format starts-->
+<div class="page" id="pagecon">
+<!--table format starts
 <table border="2">
   <thead>
     <tr>
       <th>Id</th>
       <th>USER ID</th>
-	  <th>NAME</th>
-	  <th>CONTACT NUMBER</th>
+      <th>NAME</th>
+      <th>CONTACT NUMBER</th>
       <th>DELIVERY ADDRESS</th>
     </tr>
   </thead>
 </table>
-<!--table format ends-->
+table format ends-->
+<br/><br/>
+<div class="container">
+  <img src="./images/Planet_Earth.jpg" alt="Avatar" style="width:90px">
+  <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
+  <p>John Doe saved us from a web disaster.</p>
+</div>
 
+<div class="container">
+  <img src="./images/back.jpg" alt="Avatar" style="width:90px">
+  <p><span >Rebecca Flex.</span> CEO at Company.</p>
+  <p>No one is better than John Doe.</p>
+</div>
+</div>
+</div>
 <footer>
 &copy; Soumi and Srimoyee. All Rights Reserved.</p>
 </footer>
 <script src="./script.js"></script>
+<script src="./orders.js"></script>
 <script src="https://github.com/hasura/js-sdk/releases/download/v0.1.3/hasura.min.js"></script>
 <script>
     hasura.setProject('bloodless10');

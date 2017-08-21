@@ -108,7 +108,7 @@ function advertise(){
     console.log(obj);
     hasura.data.query(obj, function onSuccess(result){
         if(result[0]){
-            window.location='/ui/advertiseform.html';
+            window.location='/ui/user.html';
             console.log(result[0]);}
         else{
             snackbar.innerHTML="Add items to cart to place advertisements";
